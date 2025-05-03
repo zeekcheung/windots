@@ -2,24 +2,33 @@
 
 $APPDATA = $Env:APPDATA
 $LOCALAPPDATA = $Env:LOCALAPPDATA
+$APPDATA = $Env:APPDATA
+$LOCALAPPDATA = $Env:LOCALAPPDATA
 $USERPROFILE = $Env:USERPROFILE
 
 $Dotfiles = "$HOME\.dotfiles"
+$Documents = [Environment]::GetFolderPath("MyDocuments")
 $Documents = [Environment]::GetFolderPath("MyDocuments")
 
 # Symbolic link list: Target => Destination
 $SymLinks = @{
   # clangd
   "$Dotfiles\clangd\config.yaml"                          = "$LOCALAPPDATA\clangd\config.yaml"
+  "$Dotfiles\clangd\config.yaml"                          = "$LOCALAPPDATA\clangd\config.yaml"
   # git
+  "$Dotfiles\git\.gitconfig"                              = "$USERPROFILE\.gitconfig"
   "$Dotfiles\git\.gitconfig"                              = "$USERPROFILE\.gitconfig"
   # powershell
   "$Dotfiles\powershell\Microsoft.PowerShell_profile.ps1" = "$Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+  "$Dotfiles\powershell\Microsoft.PowerShell_profile.ps1" = "$Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
   # vim
+  "$Dotfiles\vim\_vimrc"                                  = "$USERPROFILE\_vimrc"
   "$Dotfiles\vim\_vimrc"                                  = "$USERPROFILE\_vimrc"
   # windows terminal
   "$Dotfiles\WindowsTerminal\settings.json"               = "$LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+  "$Dotfiles\WindowsTerminal\settings.json"               = "$LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
   # wsl
+  "$Dotfiles\wsl\.wslconfig"                              = "$USERPROFILE\.wslconfig"
   "$Dotfiles\wsl\.wslconfig"                              = "$USERPROFILE\.wslconfig"
 }
 
@@ -54,8 +63,10 @@ foreach ($Package in $Packages) {
 
 # Refresh Path
 $Env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+$Env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 
 # Create Symbolic Links
+Write-Host "Creating Symbolic Links..."
 Write-Host "Creating Symbolic Links..."
 foreach ($Symlink in $SymLinks.GetEnumerator()) {
   $Target = $Symlink.Key
