@@ -1,0 +1,99 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [],
+  "centerOnLaunch": true,
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultInputScope": "alphanumericHalfWidth",
+  "defaultProfile": "{19856e75-7355-48c4-a8f3-d097302f4bb0}",
+  "initialCols": 80,
+  "initialRows": 20,
+  "keybindings": [
+    {
+      "id": "Terminal.CopyToClipboard",
+      "keys": "ctrl+c"
+    },
+    {
+      "id": "Terminal.PasteFromClipboard",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "Terminal.DuplicatePaneAuto",
+      "keys": "alt+shift+d"
+    }
+  ],
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Tokyo Night Moon",
+      "cursorShape": "filledBox",
+      "font": {
+        "face": "Maple Mono NF",
+        "size": 16
+      }
+    },
+    "list": [
+      {
+        "altGrAliasing": true,
+        "antialiasingMode": "grayscale",
+        "closeOnExit": "automatic",
+        "commandline": "D:\\Program Files\\PowerShell\\7\\pwsh.exe -nologo",
+        "cursorShape": "filledBox",
+        "guid": "{19856e75-7355-48c4-a8f3-d097302f4bb0}",
+        "hidden": false,
+        "historySize": 9001,
+        "icon": "D:\\Program Files\\PowerShell\\7\\assets\\Powershell_black.ico",
+        "name": "pwsh",
+        "padding": "8, 8, 8, 8",
+        "snapOnInput": true,
+        "startingDirectory": "%USERPROFILE%",
+        "useAcrylic": false
+      },
+      {
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "cmd"
+      },
+      {
+        "commandline": "C:\\WINDOWS\\system32\\wsl.exe --distribution-id {b5e8a4d0-0627-42b7-856a-8661c9bf9e6f} --cd ~ -u zeek",
+        "guid": "{93a54cb0-68ae-5cd1-91dc-0b921c53ef23}",
+        "hidden": false,
+        "icon": "D:\\WSL\\archlinux\\shortcut.ico",
+        "name": "archlinux",
+        "source": "Microsoft.WSL"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#222436",
+      "black": "#1B1D2B",
+      "blue": "#82AAFF",
+      "brightBlack": "#444A73",
+      "brightBlue": "#82AAFF",
+      "brightCyan": "#86E1FC",
+      "brightGreen": "#C3E88D",
+      "brightPurple": "#FCA7EA",
+      "brightRed": "#FF757F",
+      "brightWhite": "#C8D3F5",
+      "brightYellow": "#FFC777",
+      "cursorColor": "#C8D3F5",
+      "cyan": "#86E1FC",
+      "foreground": "#C8D3F5",
+      "green": "#C3E88D",
+      "name": "Tokyo Night Moon",
+      "purple": "#C099FF",
+      "red": "#FF757F",
+      "selectionBackground": "#2D3F76",
+      "white": "#828BB8",
+      "yellow": "#FFC777"
+    }
+  ],
+  "themes": []
+}

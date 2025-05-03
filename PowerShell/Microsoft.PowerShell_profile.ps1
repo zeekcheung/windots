@@ -1,3 +1,9 @@
+$Host.UI.RawUI.WindowTitle = ""
+#f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
+
+Import-Module -Name Microsoft.WinGet.CommandNotFound
+#f45873b3-b655-43a6-b217-97c00aa0db58
+
 # Enhance command suggestions
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Windows
@@ -22,6 +28,17 @@ $env:FZF_DEFAULT_OPTS = "
   --preview='bat --color=always {}'
   --preview-window=right,60%
 "
+
+fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
+
+$env:FNM_MULTISHELL_PATH = "C:\Users\zeekc\AppData\Local\fnm_multishells\17184_1745943454228"
+$env:FNM_VERSION_FILE_STRATEGY = "local"
+$env:FNM_DIR = "C:\Users\zeekc\AppData\Roaming\fnm"
+$env:FNM_LOGLEVEL = "info"
+$env:FNM_NODE_DIST_MIRROR = "https://nodejs.org/dist"
+$env:FNM_COREPACK_ENABLED = "true"
+$env:FNM_RESOLVE_ENGINES = "true"
+$env:FNM_ARCH = "x64"
 
 # Aliases
 Set-Alias alias Set-Alias
@@ -133,12 +150,13 @@ function prompt {
   $user = $Env:USERNAME
   $dir = Get-Location
   $gitBranch = Get-GitBranch
-  
+
   # Define colors
   $userColor = "Yellow"
   $dirColor = "Cyan"
   $branchColor = "Magenta"
   $promptSymbolColor = "Green"
+  $textColor = "White"
 
   # Add a newline before the prompt for subsequent prompts
   if ($firstPrompt) {
@@ -146,9 +164,10 @@ function prompt {
   } else {
     Write-Host ""
   }
-  
+
   # Format prompt components with colors
   Write-Host "$user " -NoNewLine  -ForegroundColor $userColor
+  Write-Host "in " -NoNewLine -ForegroundColor $textColor
   if ($gitBranch -ne '') {
     Write-Host "$dir" -NoNewLine -ForegroundColor $dirColor
     Write-Host "$gitBranch" -ForegroundColor $branchColor
@@ -156,6 +175,6 @@ function prompt {
     Write-Host "$dir" -ForegroundColor $dirColor
   }
   Write-Host '❯' -NoNewLine -ForegroundColor $promptSymbolColor
-  
+
   return " "
 }
