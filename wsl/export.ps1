@@ -1,7 +1,7 @@
 wsl --shutdown
 
-wsl --export Ubuntu-22.04 D:\Wsl\Ubuntu-22.04.tar
+wsl --export archlinux D:\WSL\archlinux.tar
 
-wsl --unregister Ubuntu-22.04
+wsl --unregister archlinux
 
-wsl --import Ubuntu-22.04 D:\Wsl\Ubuntu-22.04 D:\Wsl\Ubuntu-22.04.tar
+wsl --import archlinux D:\WSL\archlinux D:\WSL\archlinux.tar
