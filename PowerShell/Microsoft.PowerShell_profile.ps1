@@ -116,9 +116,10 @@ Remove-DefaultAlias gp
 function ga { git add $args }
 function gb { git branch $args }
 function gc { git commit -m $args }
+function gco { git checkout $args }
 function gd { git diff $args }
 function gs { git stash $args }
-function gp { git pull && git push }
+function gp { git pull; git push }
 function gt { git status }
 Set-Alias gg lazygit
 
@@ -137,11 +138,12 @@ function Get-GitBranch {
       if ($branchName) {
         return " on  $branchName"
       }
-    } catch {
+    }
+    catch {
       # Handle any errors silently
     }
   }
-  return ''
+  return ""
 }
 
 # custom prompt
@@ -161,7 +163,8 @@ function prompt {
   # Add a newline before the prompt for subsequent prompts
   if ($firstPrompt) {
     $global:firstPrompt = $false
-  } else {
+  }
+  else {
     Write-Host ""
   }
 
@@ -171,7 +174,8 @@ function prompt {
   if ($gitBranch -ne '') {
     Write-Host "$dir" -NoNewLine -ForegroundColor $dirColor
     Write-Host "$gitBranch" -ForegroundColor $branchColor
-  } else {
+  }
+  else {
     Write-Host "$dir" -ForegroundColor $dirColor
   }
   Write-Host '❯' -NoNewLine -ForegroundColor $promptSymbolColor

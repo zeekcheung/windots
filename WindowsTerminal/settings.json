@@ -6,7 +6,7 @@
   "copyFormatting": "none",
   "copyOnSelect": false,
   "defaultInputScope": "alphanumericHalfWidth",
-  "defaultProfile": "{19856e75-7355-48c4-a8f3-d097302f4bb0}",
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
   "initialCols": 80,
   "initialRows": 20,
   "keybindings": [
@@ -39,33 +39,28 @@
     },
     "list": [
       {
-        "altGrAliasing": true,
-        "antialiasingMode": "grayscale",
-        "closeOnExit": "automatic",
-        "commandline": "D:\\Program Files\\PowerShell\\7\\pwsh.exe -nologo",
-        "cursorShape": "filledBox",
-        "guid": "{19856e75-7355-48c4-a8f3-d097302f4bb0}",
-        "hidden": false,
-        "historySize": 9001,
-        "icon": "D:\\Program Files\\PowerShell\\7\\assets\\Powershell_black.ico",
-        "name": "pwsh",
-        "padding": "8, 8, 8, 8",
-        "snapOnInput": true,
-        "startingDirectory": "%USERPROFILE%",
-        "useAcrylic": false
-      },
-      {
-        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "commandline": "cmd.exe /k",
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "hidden": false,
-        "name": "cmd"
+        "name": "Command Prompt"
       },
       {
-        "commandline": "C:\\WINDOWS\\system32\\wsl.exe --distribution-id {b5e8a4d0-0627-42b7-856a-8661c9bf9e6f} --cd ~ -u zeek",
-        "guid": "{93a54cb0-68ae-5cd1-91dc-0b921c53ef23}",
+        "commandline": "powershell.exe -nologo",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "hidden": false,
-        "icon": "D:\\WSL\\archlinux\\shortcut.ico",
-        "name": "archlinux",
+        "name": "Windows PowerShell"
+      },
+      {
+        "commandline": "pwsh.exe -nologo",
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "hidden": false,
+        "name": "PowerShell",
+        "source": "Windows.Terminal.PowershellCore"
+      },
+      {
+        "guid": "{8074b8cf-d171-5ac8-a71f-dfe529e2b526}",
+        "hidden": false,
+        "name": "Arch Linux",
         "source": "Microsoft.WSL"
       }
     ]
